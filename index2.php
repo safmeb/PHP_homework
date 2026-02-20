@@ -38,3 +38,38 @@ $type=gettype($variable);
     echo "type is other";
     }
 ?>
+
+
+// и второй вариант: 
+
+
+<?php
+$variable = 3.14;
+// $variable = 3;
+// $variable = 'one';
+ //$variable = true;
+//$variable = null;
+// $variable = [];
+
+//  Ваш программный код, в котором переменной $type
+//  присваивается одно из значений: bool, float, 
+//  int, string, null или other
+gettype($variable);
+switch (gettype($variable)) {
+    case "boolean":
+    case "":
+    case "integer":
+    case "string":
+    case "NULL":
+        $type=gettype($variable);
+        echo "type is $type";
+                break;
+    case "double":
+        $type="float";
+        echo "type is $type";
+            break;
+    default:
+        echo "type is other";
+}
+
+?>
